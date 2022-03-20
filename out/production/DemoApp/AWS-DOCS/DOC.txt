@@ -1,0 +1,139 @@
+AWS Regions -> AZs  and edge locations regional caches
+
+                     AWS Account    global          (IAM , Route53)
+                    IAM users 1,2,3
+         region1        region2        region3       (S3 , DynamoDB)
+
+      AZ1      AZ2     AZ1   AZ2       Az1   Az2     ( Ec2, rds, ebs )
+
+
+Compute , Analytics services
+----------------------------
+
+EC2 - elastic compute cloud
+Autoscaling - EC2 horizontal scaling
+Lambda - Serverless computing
+ELB - Elastic Load balancer
+ECS - Elastic Container Service
+EMR - Elastic Mapreduce
+Kinesis - Real time data/video streaming
+Athena - Interactive query engine
+QuickSight - BI
+Glue - ETL service
+
+
+AWS Storage and Database Services
+----------------------------------
+
+EBS - Elastic Block Storage
+S3 - Simple Storage Service
+EFS - Elastic File System
+RDS - Relational Database Service
+DynamoDB - AWS NoSQL Database
+Redshift - Data Warehousing
+Elasticache - Fast and Flexible Caching
+
+
+AWS Network and Management Services
+-----------------------------------
+
+VPC - Virtual Private Cloud
+Route53 - AWS DNS Service
+Direct Connect - Dedicated Network
+CloudFront - Content Delivery Network
+CloudWatch - Application & Infrastructure Monitoring
+CloudFormation - Provision Infrastructure as a code
+Elastic Beanstalk - Application Orchestration Service
+Opsworks - Infrastructure Configuration Management
+
+
+AWS Application and Development Services
+----------------------------------------
+
+API Gateway - Managed REST and web-socket APIs
+SQS - Simple Queue Service
+SNS - Simple Notification Service
+SES - Simple Email Service
+Cognito - User Management for Web Apps(LDAP)
+CodeCommit - Hosted GIT repo
+CodeBuild - CI service
+CodeDeploy - Automated Deployments
+Code Pipeline - CD service
+
+
+IAM service (Identity and access management)
+
+KMS service (Key management service)
+
+ACM (amazon certificate management)
+
+
+
+
+EKS ( Elastic Kubernetes service)
+
+- create a VPC
+- create a IAM role (AWS user) and a Security Group( with list of permissions) => ACLs
+- create control plane
+- create worker nodes(EC2 instances) and add them to cluster
+     - create as a node group (group of nodes)
+     - choose cluster it will attach to
+     - define security group, select instance type, resources (autoscale)
+- configure kubectl to connect to the cluster
+
+eksctl - command line tool , have aws creds in local
+
+
+AWS MSK or Amazon Kinesis
+Amazon Managed streaming for apache kafka
+
+
+Kinesis - AWS apis , throughput provisioning model , seamless scaling , retention time 1d (max 7d) , Deep AWS Integration
+(Use case when you have few shards and lot of processing)
+
+
+Kafka - Opensource , Cluster-provisioning model , scaling not seamless to client , retention 7d (max is unlimited) , Strong 3rd party tooling
+(Bill only for broker can create millions of topics)
+
+Amazon Aurora DB
+ - Multi-AZ
+Dynamo DB
+ - Multi-AZ
+
+SQL                                vs                        NoSQL
+
+pre-defined schema                                   no predefined schema
+structured data                                      unstructured data
+good for joins and complex queries                   not for complex queries
+ACID properties (Atomicity,consistency               CAP theorem(consistency , availability
+                ,Isolation,Durability)                               ,partition tolerance)
+scales vertically                                    scales horizontally
+
+
+Amazon Aurora                                       Amazon Dynamo DB
+
+MySQL support                                       key -value doc DB
+global DB                                           global Table
+HA                                                  auto-scale
+integrated caches, no adjustment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
